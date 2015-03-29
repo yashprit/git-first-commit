@@ -1,6 +1,6 @@
 {
   "name": "git-first-commit",
-  "version": "0.0.0alpha",
+  "version": "0.0.0-alpha",
   "description": "github intial commit",
   "bugs": {
     "url": "yashprit/git-first-commit/issues"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "yashprit/config-git"
+    "url": "yashprit/git-first-commit"
   },
   "license": "MIT",
   "files": [
@@ -32,7 +32,7 @@
     "mocha": "*"
   },
   "scripts": {
-    "test": "*"
+    "test": "mocha"
   },
   "bin": {
     "gitFirstCommit": "cli.js"
