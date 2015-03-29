@@ -1,0 +1,40 @@
+{
+  "name": "git-first-commit",
+  "version": "0.0.0alpha",
+  "description": "github intial commit",
+  "bugs": {
+    "url": "yashprit/git-first-commit/issues"
+  },
+  "author": {
+    "url": "yashprit.github.io",
+    "name": "Yashprit",
+    "email": "yashprit@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yashprit/config-git"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "git-first-commit",
+    "github",
+    "git",
+    "commit"
+  ],
+  "dependencies": {
+    "minimist": "^1.1.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "*"
+  },
+  "bin": {
+    "gitFirstCommit": "cli.js"
+  }
+}
