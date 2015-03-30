@@ -5,7 +5,7 @@ var exec = require("child_process").exec;
 module.exports = gitCommit;
 
 function gitCommit(message, cb) {
-  var command = 'git commit -a -m "' + message + '"';
+  var command = 'git add -A && git commit -m "' + message + '"';
   var intialPush = 'git push origin -u master'
   exec(command, function(err) {
     if (err) {
