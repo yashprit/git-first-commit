@@ -1,6 +1,6 @@
 {
   "name": "git-first-commit",
-  "version": "0.0.0-beta",
+  "version": "0.1.0",
   "description": "github intial commit",
   "bugs": {
     "url": "yashprit/git-first-commit/issues"
@@ -8,7 +8,7 @@
   "author": {
     "url": "yashprit.github.io",
     "name": "Yashprit",
-    "email": "yashprit@gmail.com"
+    "email": "yashprit@yashprit.com"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,10 @@
     "commit"
   ],
   "dependencies": {
-    "minimist": "^1.1.1"
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "^3.2.0"
   },
   "scripts": {
     "test": "mocha"
