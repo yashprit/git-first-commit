@@ -1,24 +1,24 @@
 'use strict';
 
-var exec = require("child_process").exec;
+var exec = require("shelljs").exec;
 
 module.exports = gitCommit;
 
 function gitCommit(message, cb) {
   var command = 'git add -A && git commit -m "' + message + '"';
-  var intialPush = 'git push origin -u master'
-  exec(command, function(err) {
-    if (err) {
-      cb(err);
-      return;
-    }
 
-    exec(intialPush, function(err, status) {
-      if (err) {
-        cb(err)
-        return;
-      }
+  let { stdout, stderr, code } = exec(command, { silent: true });
+  if(stderr) {
+    cb(err);
+    return;
+  } else {
+    var intialPush = 'git push origin -u master';
+    let { stdout, stderr, code } = exec(command, { silent: true });
+    if (stderr) {
+      cb(err)
+      return;
+    } else {
       cb(null, true);
-    });
-  });
+    }
+  }
 }
