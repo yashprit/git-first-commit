@@ -10,7 +10,7 @@ function gitCommit(message, cb) {
   var { stdout, stderr, code } = exec(command, { silent: true });
 
   if(!stderr) {
-    var command = 'git push origin -u master';
+    var command = 'git push origin -q -u master';
     var { stdout, stderr, code } = exec(command, { silent: true });
     if(!stderr) {
       cb(null, true);
