@@ -5,22 +5,19 @@ var exec = require("shelljs").exec;
 module.exports = gitCommit;
 
 function gitCommit(message, cb) {
-  var command = 'git add -A && git commit -m "' + message + '"';
+  var command = `git add -A && git commit -q -m "${message}"`;
 
-  let { stdout, stderr, code } = exec(command, { silent: true });
-  //console.log(stdout, stderr, code )
-  if(stderr) {
-    cb(err);
-    return;
-  } else {
-    var intialPush = 'git push origin -u master';
-    let { stdout, stderr, code } = exec(command, { silent: true });
-    console.log(stdout, stderr, code )
-    if (stderr) {
-      cb(err)
-      return;
-    } else {
+  var { stdout, stderr, code } = exec(command, { silent: true });
+
+  if(!stderr) {
+    var command = 'git push origin -u master';
+    var { stdout, stderr, code } = exec(command, { silent: true });
+    if(!stderr) {
       cb(null, true);
+    } else {
+      cb(stderr, null)
     }
+  } else {
+    cb(stderr, null)
   }
 }
